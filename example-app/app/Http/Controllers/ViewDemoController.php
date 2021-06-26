@@ -12,4 +12,3 @@ class ViewDemoController extends Controller
         return view('demoView',['names'=>$data]);
     }
 }
-

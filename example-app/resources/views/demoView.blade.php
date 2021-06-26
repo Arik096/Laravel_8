@@ -20,7 +20,11 @@
 @endphp --}}
 
 
-@foreach ($names as $name)
-{{$name}} <br>
-@endforeach
+ @foreach ($names as $name) {{$name}} <br> @endforeach
 
+ <script>
+     var data = @json($names);
+     console.log(data);
+ </script>
+
+@include('inner')
