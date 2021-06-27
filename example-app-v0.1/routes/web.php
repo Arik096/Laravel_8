@@ -30,3 +30,11 @@ Route::post('/visitorReq', [VisitorRequestController::class, 'visitorData']);
 
 Route::view('/home', 'home');
 Route::view('/na', 'noaccess');
+
+
+// Route::view('/t1', 'test1');
+// Route::view('/t2', 'test2');
+Route::group(['middleware'=>['protectedPages']],function(){
+    Route::view('/t1', 'test1');
+    Route::view('/t2', 'test2');
+});
