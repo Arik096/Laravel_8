@@ -38,3 +38,7 @@ Route::group(['middleware'=>['protectedPages']],function(){
     Route::view('/t1', 'test1');
     Route::view('/t2', 'test2');
 });
+
+Route::view('/t3', 'test3')->middleware('protectedPageRoute');
+Route::view('/t4', 'test4')->middleware('protectedPageRoute');;
+Route::view('/t5', 'test5')->middleware('protectedPageRoute');;
