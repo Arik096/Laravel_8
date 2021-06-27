@@ -26,3 +26,7 @@ Route::view('/login', 'user');
 
 Route::view('/visitor', 'visitor');
 Route::post('/visitorReq', [VisitorRequestController::class, 'visitorData']);
+
+
+Route::view('/home', 'home');
+Route::view('/na', 'noaccess');

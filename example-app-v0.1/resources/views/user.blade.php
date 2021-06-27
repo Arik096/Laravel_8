@@ -1,6 +1,6 @@
 <h1>User View</h1>
 
-@if ($errors->any())
+{{-- @if ($errors->any())
 @foreach ($errors->all() as $err)
 <li>{{$err}}</li>
 @endforeach
@@ -20,4 +20,4 @@
     @enderror</span>
     <br>
     <button type="submit"> Submit</button>
-</form>
+</form> --}}
