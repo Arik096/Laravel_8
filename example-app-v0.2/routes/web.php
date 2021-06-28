@@ -20,4 +20,5 @@ Route::get('/', function () {
 
 
 //Route::get('/user',[UserController::class, 'index']);
-Route::get('/user',[UserController::class, 'getData']);
+// Route::get('/user',[UserController::class, 'getData']);
+Route::get('/user',[UserController::class, 'apiData']);
