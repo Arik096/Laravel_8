@@ -21,4 +21,10 @@ Route::get('/', function () {
 
 //Route::get('/user',[UserController::class, 'index']);
 // Route::get('/user',[UserController::class, 'getData']);
-Route::get('/user',[UserController::class, 'apiData']);
+// Route::get('/user',[UserController::class, 'apiData']);
+
+Route::view('/user', 'user');
+// Route::post('/userloged', [UserController::class, 'testRequest']);
+Route::delete('/userloged', [UserController::class, 'testRequest']);
+// Route::put('/userloged', [UserController::class, 'testRequest']);
+// Route::get('/userloged', [UserController::class, 'testRequest']);
