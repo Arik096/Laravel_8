@@ -21,12 +21,17 @@ class UserController extends Controller
     // }
 
 
-    public function apiData(){
-        $information =  Http::get('https://reqres.in/api/users');
-        // $result = json_decode($data, true);
+    // public function apiData(){
+    //     $information =  Http::get('https://reqres.in/api/users');
+    //     // $result = json_decode($data, true);
 
-        //$headInfo = $information->headers();
+    //     //$headInfo = $information->headers();
 
-        return view('apiData',['information'=>$information['data']]);
+    //     return view('apiData',['information'=>$information['data']]);
+    // }
+
+
+    public function testRequest(Request $request){
+        return $request;
     }
 }
