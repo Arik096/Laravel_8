@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\addMemberController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,5 +50,9 @@ Route::get('/', function () {
 // });
 
 
-Route::view('/member', 'member');
-Route::post('/added', [addMemberController::class,'addMember']);
+// Route::view('/member', 'member');
+// Route::post('/added', [addMemberController::class,'addMember']);
+
+
+Route::view('/upload','fileUploader');
+Route::post('/upload',[UploadController::class, 'index']);
