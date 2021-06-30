@@ -14,4 +14,20 @@ class EmpController extends Controller
         $data =  Emp::paginate(7);
         return view('tableList', ['emps'=>$data]);
     }
+
+
+    public function addData(Request $request){
+        $emp = new Emp;
+        $emp->name = $request->name;
+        $emp->age = $request->age;
+        $emp->address = $request->address;
+        $emp->col1 = $request->col1;
+        $emp->col2 = $request->col2;
+        $emp->col3 = $request->col3;
+        $emp->col4 = $request->col4;
+        $emp->col5 = $request->col5;
+        $emp->col6 = $request->col6;
+        $emp->save();
+        return redirect('/emplist');
+    }
 }
