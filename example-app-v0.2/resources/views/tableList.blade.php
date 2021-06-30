@@ -1,6 +1,6 @@
 <h1>emp list</h1>
 
-
+<button><a href="/addemp">Create</a></button>
 <table border="2">
     <tr>
         <th>ID</th>
