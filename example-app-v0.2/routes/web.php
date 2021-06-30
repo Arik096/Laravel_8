@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\loginController;
@@ -54,5 +55,12 @@ Route::get('/', function () {
 // Route::post('/added', [addMemberController::class,'addMember']);
 
 
-Route::view('/upload','fileUploader');
-Route::post('/upload',[UploadController::class, 'index']);
+// Route::view('/upload','fileUploader');
+// Route::post('/upload',[UploadController::class, 'index']);
+
+
+Route::get('/local/{lang}', function ($lang) {
+        App::setlocale($lang);
+        return view('local');
+});
+Route::view('/local','local');
