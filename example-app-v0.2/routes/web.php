@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\addMemberController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\EmpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,3 +65,6 @@ Route::get('/local/{lang}', function ($lang) {
         return view('local');
 });
 Route::view('/local','local');
+
+
+Route::get('/emplist',[EmpController::class, 'show']);
