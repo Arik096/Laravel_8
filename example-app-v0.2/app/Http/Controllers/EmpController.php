@@ -36,4 +36,18 @@ class EmpController extends Controller
         $data->delete();
         return redirect('/emplist')->with('status','Record Deleted');
     }
+
+    public function ed($id){
+        $data =  Emp::find($id);
+        return view('empEdit',['emp'=>$data]);
+    }
+
+    public function up(Request $request){
+        $data = Emp::find($request->id);
+        $data->name = $request->name;
+        $data->age = $request->age;
+        $data->address = $request->address;
+        $data->save();
+        return redirect('/emplist');
+    }
 }
