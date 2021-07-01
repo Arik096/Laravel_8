@@ -68,5 +68,6 @@ Route::view('/local','local');
 
 
 Route::get('/emplist',[EmpController::class, 'show']);
+Route::get('/del/{id}',[EmpController::class, 'del']);
 Route::view('/addemp','addEmp');
 Route::post('/addemp', [EmpController::class, 'addData']);
