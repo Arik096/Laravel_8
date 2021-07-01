@@ -11,7 +11,7 @@ class EmpController extends Controller
 {
     public function show(){
         // return view('tableList');
-        $data =  Emp::paginate(7);
+        $data =  Emp::paginate(10);
         return view('tableList', ['emps'=>$data]);
     }
 
@@ -29,5 +29,11 @@ class EmpController extends Controller
         $emp->col6 = $request->col6;
         $emp->save();
         return redirect('/emplist');
+    }
+
+    public function del($id){
+        $data = Emp::find($id);
+        $data->delete();
+        return redirect('/emplist')->with('status','Record Deleted');
     }
 }
