@@ -1,5 +1,7 @@
 <h1>emp list</h1>
-
+@if ($sms = Session::get('status'))
+<h6>{{$sms}}</h6>
+@endif
 <button><a href="/addemp">Create</a></button>
 <table border="2">
     <tr>
@@ -13,6 +15,7 @@
         <th>col4</th>
         <th>col5</th>
         <th>col6</th>
+        <th>Actions</th>
     </tr>
     @foreach ($emps as $emp)
     <tr>
@@ -26,6 +29,7 @@
         <td>{{$emp->col4}}</td>
         <td>{{$emp->col5}}</td>
         <td>{{$emp->col6}}</td>
+        <td><a href="/del/{{$emp->id}}">Delete</a></td>
     </tr>
     @endforeach
 </table>
