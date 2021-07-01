@@ -29,7 +29,11 @@
         <td>{{$emp->col4}}</td>
         <td>{{$emp->col5}}</td>
         <td>{{$emp->col6}}</td>
-        <td><a href="/del/{{$emp->id}}">Delete</a></td>
+        <td>
+            <a href="/del/{{$emp->id}}">Delete</a>
+            |
+            <a href="/ed/{{$emp->id}}">Edit</a>
+        </td>
     </tr>
     @endforeach
 </table>
