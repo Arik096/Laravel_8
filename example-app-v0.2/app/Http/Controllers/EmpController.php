@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Emp;
+use finfo;
+use Illuminate\Support\Facades\DB;
 
 
 class EmpController extends Controller
@@ -49,5 +51,40 @@ class EmpController extends Controller
         $data->address = $request->address;
         $data->save();
         return redirect('/emplist');
+    }
+
+
+    public function dbOperations(){
+        // $data =  DB::table('emps')->get();
+        // return view('dbop', ['emps'=>$data]);
+
+
+        // return  DB::table('emps')
+        // ->where('id', 10)
+        // ->get();
+
+
+        // return  (array)DB::table('emps')->find(10);
+
+
+        // return  DB::table('emps')->count();
+
+
+        // return DB::table('emps')
+        // ->insert([
+        //     'name'=>'arik last',
+        //     'age'=> '24',
+        //     'address'=>'sebanir'
+        // ]);
+
+        // return DB::table('emps')
+        // ->where('id',10)
+        // ->update([
+        //     'col1'=>'5'
+        // ]);
+
+        return DB::table('emps')
+        ->where('id',10)
+        ->delete();
     }
 }
