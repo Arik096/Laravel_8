@@ -73,3 +73,7 @@ Route::get('/ed/{id}',[EmpController::class, 'ed']);
 Route::post('/ed',[EmpController::class, 'up']);
 Route::view('/addemp','addEmp');
 Route::post('/addemp', [EmpController::class, 'addData']);
+
+
+
+Route::get('/db',[EmpController::class, 'dbOperations']);
