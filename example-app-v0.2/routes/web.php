@@ -7,6 +7,7 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\addMemberController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\EmpController;
+use App\Http\Controllers\StaffController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,3 +78,7 @@ Route::post('/addemp', [EmpController::class, 'addData']);
 
 
 Route::get('/db',[EmpController::class, 'dbOperations']);
+
+
+
+Route::get('/staff',[StaffController::class, 'index']);
