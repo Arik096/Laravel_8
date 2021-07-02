@@ -83,8 +83,29 @@ class EmpController extends Controller
         //     'col1'=>'5'
         // ]);
 
-        return DB::table('emps')
-        ->where('id',10)
-        ->delete();
+        // return DB::table('emps')
+        // ->where('id',10)
+        // ->delete();
+
+
+
+
+
+
+
+        // aggerates
+
+
+        // return DB::table('emps')->avg('id');
+        // return DB::table('emps')->count('id');
+        // return DB::table('emps')->sum('id');
+        // return DB::table('emps')->max('id');
+        // return DB::table('emps')->max('name');
+        // return DB::table('emps')->min('name');
+
+        $min_id = DB::table('emps')->min('id');
+        $max_id = DB::table('emps')->max('id');
+
+        return view('dbop',['maxed'=>$max_id, 'mined'=>$min_id]);
     }
 }
