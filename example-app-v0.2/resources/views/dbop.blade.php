@@ -4,3 +4,7 @@
 
     @endforeach
 </table> --}}
+
+<h1>max = {{$maxed}}</h1>
+<br>
+<h1>min = {{$mined}}</h1>
