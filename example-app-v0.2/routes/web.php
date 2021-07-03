@@ -9,6 +9,7 @@ use App\Http\Controllers\UploadController;
 use App\Http\Controllers\EmpController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\DeviceController;
+use App\Mail\TestMail;
 
 
 
@@ -112,3 +113,9 @@ Route::get('/device/{key}',[DeviceController::class, 'index']);
 // Route::get('/device/{key:id}',[DeviceController::class, 'index']);
 // Route::get('/device/{key:name}',[DeviceController::class, 'index']);
 // Route::get('/device/{key:staff_id}',[DeviceController::class, 'index']);
+
+
+
+Route::get('/mail', function(){
+    return new TestMail;
+});
