@@ -36,4 +36,8 @@ class Staff extends Model
     public function getCompany(){
         return $this->hasOne('App\Models\Company');
     }
+
+    public function getDevice(){
+        return $this->hasMany('App\Models\Device')->where('name', 'mobile');
+    }
 }
