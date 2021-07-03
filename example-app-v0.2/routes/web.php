@@ -83,3 +83,4 @@ Route::get('/db',[EmpController::class, 'dbOperations']);
 
 Route::get('/staff',[StaffController::class, 'index']);
 Route::get('/acc',[StaffController::class, 'accessors']);
+Route::get('/mut',[StaffController::class, 'mutators']);
