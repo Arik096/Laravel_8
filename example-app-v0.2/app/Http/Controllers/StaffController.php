@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use App\Models\Staff;
+
 class StaffController extends Controller
 {
     public function index(){
@@ -38,5 +40,10 @@ class StaffController extends Controller
         // ->select('staffs.*')
         //->where('staffs.name', 'arik')
         ->get();
+    }
+
+
+    public function accessors(){
+        return Staff::all();
     }
 }
