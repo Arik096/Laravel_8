@@ -21,15 +21,19 @@ class Staff extends Model
     // }
 
 
-    public function setNameAttribute($value){
-        if(substr($value, 0 ,3) == 'Mr.' || substr($value, 0, 3) == 'mr.'){
-            $this->attributes['name'] = $value;
-        }
-        else{
-        $this->attributes['name'] = 'Mr. '. $value;
-        }
-    }
-    public function setEmailAttribute($value){
-        $this->attributes['email'] = $value. ', bd';
+    // public function setNameAttribute($value){
+    //     if(substr($value, 0 ,3) == 'Mr.' || substr($value, 0, 3) == 'mr.'){
+    //         $this->attributes['name'] = $value;
+    //     }
+    //     else{
+    //     $this->attributes['name'] = 'Mr. '. $value;
+    //     }
+    // }
+    // public function setEmailAttribute($value){
+    //     $this->attributes['email'] = $value. ', bd';
+    // }
+
+    public function getCompany(){
+        return $this->hasOne('App\Models\Company');
     }
 }
