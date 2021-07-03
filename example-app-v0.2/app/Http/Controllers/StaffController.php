@@ -46,4 +46,15 @@ class StaffController extends Controller
     public function accessors(){
         return Staff::all();
     }
+
+    public function mutators()
+    {
+       $data = new Staff;
+
+       $data->name = 'mr. jony sins';
+       $data->email = 'USA';
+       $data->save();
+
+       return $data;
+    }
 }
