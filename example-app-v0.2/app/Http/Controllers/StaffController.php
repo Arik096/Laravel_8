@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Staff;
+use App\Models\Company;
 
 class StaffController extends Controller
 {
@@ -56,5 +57,9 @@ class StaffController extends Controller
        $data->save();
 
        return $data;
+    }
+
+    public function one2oneRelation(){
+        return Staff::find(13)->getCompany;
     }
 }
