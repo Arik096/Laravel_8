@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Models\Staff;
 use App\Models\Company;
+use App\Models\Device;
 
 class StaffController extends Controller
 {
@@ -61,5 +62,11 @@ class StaffController extends Controller
 
     public function one2oneRelation(){
         return Staff::find(13)->getCompany;
+    }
+
+    public function one2manyRelation()
+    {
+        // return Staff::find(4)->getDevice;
+        return Staff::find(1)->getDevice;
     }
 }
