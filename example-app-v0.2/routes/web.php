@@ -8,6 +8,10 @@ use App\Http\Controllers\addMemberController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\EmpController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\DeviceController;
+
+
+
 use Illuminate\Support\Str;
 
 /*
@@ -89,15 +93,22 @@ Route::get('/121',[StaffController::class, 'one2oneRelation']);
 Route::get('/12M',[StaffController::class, 'one2manyRelation']);
 
 
-$data = 'hi, laravel';
+// $data = 'hi, laravel';
 
-// $data = Str::ucfirst($data);
-// $data = Str::replaceFirst('Hi', 'Hello', $data);
-// $data = Str::camel($data);
+// // $data = Str::ucfirst($data);
+// // $data = Str::replaceFirst('Hi', 'Hello', $data);
+// // $data = Str::camel($data);
 
-$data = Str::of($data)
-->ucfirst($data)
-->replaceFirst('Hi','Hello',$data)
-->camel($data);
+// $data = Str::of($data)
+// ->ucfirst($data)
+// ->replaceFirst('Hi','Hello',$data)
+// ->camel($data);
 
-echo $data;
+// echo $data;
+
+
+
+Route::get('/device/{key}',[DeviceController::class, 'index']);
+// Route::get('/device/{key:id}',[DeviceController::class, 'index']);
+// Route::get('/device/{key:name}',[DeviceController::class, 'index']);
+// Route::get('/device/{key:staff_id}',[DeviceController::class, 'index']);
