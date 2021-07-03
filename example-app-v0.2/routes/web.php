@@ -85,3 +85,5 @@ Route::get('/staff',[StaffController::class, 'index']);
 Route::get('/acc',[StaffController::class, 'accessors']);
 Route::get('/mut',[StaffController::class, 'mutators']);
 Route::get('/121',[StaffController::class, 'one2oneRelation']);
+Route::get('/12M',[StaffController::class, 'one2manyRelation']);
+
