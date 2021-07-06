@@ -13,14 +13,29 @@ class UserController extends Controller
         return view('user.userlist',['users'=>$userData]);
     }
 
+    function userCreate(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        DB::table('users')->insert([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+        ]);
+
+        return redirect('/userlist')->with('update', 'Data Cretaed');
+    }
+
     function userUpdate($id){
-        $singleUserData = DB::table('users')->where('id',1)->get();
-        //$singleUserData = $Data->toJson();
+        $singleUserData = DB::table('users')->where('id',$id)->get();
         return view('user.userupdate',['user'=> $singleUserData]);
     }
 
     function saveUserData(Request $request){
-        $dataOk = $request->validate([
+        $request->validate([
             'name'=>'required',
             'email'=>'required',
             'password' => 'required'
@@ -34,4 +49,8 @@ class UserController extends Controller
 
         return redirect('/userlist')->with('update','Data Updated');
     }
+
+    // function userDelete(Request $request){
+    //     return $request;
+    // }
 }
