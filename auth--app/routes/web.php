@@ -29,4 +29,4 @@ Route::view('/usercreate','user.createuser');
 Route::post('/usercreate',[UserController::class, 'userCreate']);
 Route::post('/userlist',[UserController::class, 'saveUserData']);
 Route::get('/userupdate/{id}',[UserController::class, 'userUpdate']);
-// Route::get('/userdelete/{id}',[UserController::class, 'userDelete']);
+ Route::get('/userdelete/{id}',[UserController::class, 'userDelete']);
