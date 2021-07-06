@@ -14,7 +14,7 @@
     <br>
     <label for="email">Email</label>
     <br>
-    <input type="email" name="email" id="{{$user[0]->email}}">
+    <input type="email" name="email" id="email" value="{{$user[0]->email}}">
     <br>
     <label for="password">Password</label>
     <br>
