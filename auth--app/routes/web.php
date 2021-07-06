@@ -25,3 +25,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 Route::get('/userlist',[UserController::class, 'userList']);
+Route::post('/userlist',[UserController::class, 'saveUserData']);
+Route::get('/userupdate/{id}',[UserController::class, 'userUpdate']);
