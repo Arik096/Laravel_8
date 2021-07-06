@@ -1,7 +1,10 @@
 <h1>User List</h1>
 
+@if (Session::has('update'))
+{{Session::get('update')}}
+@endif
 
-<table border="5" style="padding: 5px">
+<table border="5" style="padding: 5px; margin: 5px">
     <tr>
         <th>ID</th>
         <th>Name</th>
@@ -12,10 +15,10 @@
     <tr>
         <td>{{$user->id}}</td>
         <td>{{$user->name}}</td>
-        <td>{{$user->emial}}</td>
+        <td>{{$user->email}}</td>
         <td>
             <button>
-                <a href="">Edit</a>
+                <a href="/userupdate/{{$user->id}}">Edit</a>
                 |
                 <a href="">Delete</a>
             </button>
