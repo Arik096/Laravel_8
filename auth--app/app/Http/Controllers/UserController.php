@@ -26,7 +26,7 @@ class UserController extends Controller
             'password' => $request->password,
         ]);
 
-        return redirect('/userlist')->with('update', 'Data Cretaed');
+        return redirect('/userlist')->with('create', 'Data Cretaed');
     }
 
     function userUpdate($id){
@@ -50,7 +50,8 @@ class UserController extends Controller
         return redirect('/userlist')->with('update','Data Updated');
     }
 
-    // function userDelete(Request $request){
-    //     return $request;
-    // }
+     function userDelete(Request $request){
+        DB::table('users')->where('id',$request->id)->delete();
+        return redirect('/userlist')->with('delete', 'Data Deleted');
+     }
 }
