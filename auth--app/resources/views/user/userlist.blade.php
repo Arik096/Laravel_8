@@ -3,7 +3,9 @@
 @if (Session::has('update'))
 {{Session::get('update')}}
 @endif
-
+<button>
+    <a href="/usercreate">Create User</a>
+</button>
 <table border="5" style="padding: 5px; margin: 5px">
     <tr>
         <th>ID</th>
