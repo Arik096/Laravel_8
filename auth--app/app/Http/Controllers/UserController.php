@@ -54,4 +54,12 @@ class UserController extends Controller
         DB::table('users')->where('id',$request->id)->delete();
         return redirect('/userlist')->with('delete', 'Data Deleted');
      }
+
+
+     function userAddress(){
+         return DB::table('users')
+         ->leftjoin('addresses','users.id','=', 'addresses.user_id')
+         ->select('users.name','addresses.address')
+         ->get();
+     }
 }
