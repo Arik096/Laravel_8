@@ -34,3 +34,4 @@ Route::get('/userupdate/{id}',[UserController::class, 'userUpdate']);
 
 Route::get('/useraddress',[UserController::class, 'userAddress']);
 
+Route::view('/test','testblade');
