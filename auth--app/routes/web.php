@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\PaymentGateway\Payment;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,9 @@ Route::get('/userupdate/{id}',[UserController::class, 'userUpdate']);
 Route::get('/useraddress',[UserController::class, 'userAddress']);
 
 Route::view('/test','testblade');
+
+
+
+Route::get('/payment',function(){
+    return Payment::process();
+});
