@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MailController;
 use App\PaymentGateway\Payment;
+use App\Mail\TestMail;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +44,6 @@ Route::view('/test','testblade');
 Route::get('/payment',function(){
     return Payment::process();
 });
+
+
+Route::get('/email',[MailController::class, 'sendEmail']);
