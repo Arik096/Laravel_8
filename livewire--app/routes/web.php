@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Post;
 use App\Http\Livewire\User;
+use App\Http\Livewire\Home;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,4 @@ Route::get('/', function () {
 
 Route::get('/post',[Post::class, 'render']);
 Route::get('/user',[User::class, 'render']);
+Route::get('/home/{name?}',[Home::class, 'render']);
