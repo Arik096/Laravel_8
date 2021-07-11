@@ -23,11 +23,12 @@
     </head>
 
     <body>
-        <h1>welcome view</h1>
+        --------------------------------<h1>welcome view</h1>--------------------------------
         {{-- @livewire('post') --}}
-    {{-- @livewire('user') --}}
-    {{-- @livewire('form') --}}
-    @livewire('action')
+        {{-- @livewire('user') --}}
+        {{-- @livewire('form') --}}
+        {{-- @livewire('action') --}}
+        @livewire('product')
         @livewireScripts
     </body>
 
