@@ -23,9 +23,11 @@
     </head>
 
     <body>
+        <h1>welcome view</h1>
         {{-- @livewire('post') --}}
     {{-- @livewire('user') --}}
-    @livewire('form')
+    {{-- @livewire('form') --}}
+    @livewire('action')
         @livewireScripts
     </body>
-</html>
+
