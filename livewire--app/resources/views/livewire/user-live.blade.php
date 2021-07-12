@@ -1,4 +1,12 @@
 <div>
+    <style>
+        nav svg{
+            height: 20px;
+        }
+        p{
+            margin-top: 10px;
+        }
+    </style>
     <section>
         <div class="container">
             <div class="row">
@@ -15,7 +23,7 @@
                                     <th>Email</th>
                                 </thead>
                                 <tbody>
-                                    @foreach ($user as $u)
+                                    @foreach ($users as $u)
                                         <tr>
                                             <td>{{ $u->id }}</td>
                                             <td>{{ $u->name }}</td>
@@ -24,6 +32,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{$users->links()}}
                         </div>
                     </div>
                 </div>
