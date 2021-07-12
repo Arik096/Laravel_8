@@ -30,7 +30,8 @@
         {{-- @livewire('form') --}}
         {{-- @livewire('action') --}}
         {{-- @livewire('product') --}}
-        @livewire('contact')
+        {{-- @livewire('contact') --}}
+        @livewire('user-live')
         @livewireScripts
     </body>
 
