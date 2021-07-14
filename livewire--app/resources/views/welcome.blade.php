@@ -32,7 +32,7 @@
         {{-- @livewire('product') --}}
         {{-- @livewire('contact') --}}
         {{-- @livewire('user-live') --}}
-
+        @livewire('students')
         @livewireScripts
     </body>
 
