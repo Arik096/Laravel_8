@@ -12,5 +12,10 @@
     {{$slot}}
 
     @livewireScripts
+    <script>
+        window.on('studentAdded',()=>{
+            $(#addStudnetModal).modal('hide');
+        })
+    </script>
 </body>
 </html>
