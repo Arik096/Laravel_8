@@ -31,7 +31,8 @@
         {{-- @livewire('action') --}}
         {{-- @livewire('product') --}}
         {{-- @livewire('contact') --}}
-        @livewire('user-live')
+        {{-- @livewire('user-live') --}}
+
         @livewireScripts
     </body>
 
