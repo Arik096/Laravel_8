@@ -7,6 +7,7 @@ use App\Http\Livewire\Home;
 use App\Http\Livewire\Form;
 use App\Http\Livewire\Students;
 use App\Http\Livewire\StudentList;
+use App\Http\Livewire\StudentCreate;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +39,6 @@ Route::get('/std',Students::class);
 
 // CRUD Routes
 Route::prefix('crud')->group(function () {
-    Route::get('/list',StudentList::class);
+    Route::get('/list',StudentList::class)->name('stdlist');
+    Route::get('/create',StudentCreate::class)->name('stdcreate');
 });
