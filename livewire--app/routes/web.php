@@ -6,6 +6,7 @@ use App\Http\Livewire\User;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Form;
 use App\Http\Livewire\Students;
+use App\Http\Livewire\StudentList;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,10 @@ Route::get('/form',[Form::class, 'render']);
 
 
 Route::get('/std',Students::class);
+
+
+
+// CRUD Routes
+Route::prefix('crud')->group(function () {
+    Route::get('/list',StudentList::class);
+});
