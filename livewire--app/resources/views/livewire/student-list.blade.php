@@ -41,7 +41,7 @@
                                         <button class="btn btn-info">
                                             Edit
                                         </button></a>
-                                        <button class="btn btn-danger">
+                                        <button class="btn btn-danger" wire:click="delete({{$student->id}})">
                                             Delete
                                         </button>
                                     </td>
