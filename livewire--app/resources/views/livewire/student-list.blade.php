@@ -6,10 +6,15 @@
                 <div class="card-header">
                     <h1>
                         List of Students
-                        <button class="btn btn-success">
-                            Create New Student
-                        </button>
+                        <a href="{{ route('stdcreate') }}">
+                            <button class="btn btn-success">
+                                Create New Student
+                            </button>
+                        </a>
                     </h1>
+                    @if (Session()->has('sms'))
+                        <div class="alert alert-success">{{ Session('sms') }}</div>
+                    @endif
                 </div>
                 <div class="card-body">
                     <table class="table">
@@ -26,15 +31,16 @@
                         <tbody>
                             @foreach ($students as $student)
                                 <tr>
-                                    <th scope="row">{{$student->id}}</th>
-                                    <td>{{$student->name}}</td>
-                                    <td>{{$student->dept}}</td>
-                                    <td>{{$student->email}}</td>
-                                    <td>{{$student->phone}}</td>
+                                    <th scope="row">{{ $student->id }}</th>
+                                    <td>{{ $student->name }}</td>
+                                    <td>{{ $student->dept }}</td>
+                                    <td>{{ $student->email }}</td>
+                                    <td>{{ $student->phone }}</td>
                                     <td>
+                                        <a href="{{route('stdupdate',['id'=>$student->id])}}">
                                         <button class="btn btn-info">
                                             Edit
-                                        </button>
+                                        </button></a>
                                         <button class="btn btn-danger">
                                             Delete
                                         </button>
