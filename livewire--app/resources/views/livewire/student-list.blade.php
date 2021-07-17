@@ -1,11 +1,3 @@
-<style>
-    svg{
-        max-width: 50px;
-    }
-    p{
-        padding-top: 10px;
-    }
-</style>
 {{-- {{ $students }} --}}
 <div class="container">
     <div class="row">
@@ -23,6 +15,14 @@
                     @if (Session()->has('sms'))
                         <div class="alert alert-success">{{ Session('sms') }}</div>
                     @endif
+                </div>
+                <div class="card-header">
+                    <div class="col-md-4">
+                        <div>
+                            <input type="text" id="sBox" wire:model="sBox" class="form-control" placeholder="Search name, email, dept or phone">
+                        </div>
+                        {{ $sBox }}
+                    </div>
                 </div>
                 <div class="card-body">
                     <table class="table">
@@ -45,11 +45,11 @@
                                     <td>{{ $student->email }}</td>
                                     <td>{{ $student->phone }}</td>
                                     <td>
-                                        <a href="{{route('stdupdate',['id'=>$student->id])}}">
-                                        <button class="btn btn-info">
-                                            Edit
-                                        </button></a>
-                                        <button class="btn btn-danger" wire:click="delete({{$student->id}})">
+                                        <a href="{{ route('stdupdate', ['id' => $student->id]) }}">
+                                            <button class="btn btn-info">
+                                                Edit
+                                            </button></a>
+                                        <button class="btn btn-danger" wire:click="delete({{ $student->id }})">
                                             Delete
                                         </button>
                                     </td>
@@ -57,9 +57,19 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{$students->links()}}
+                    {{ $students->links() }}
                 </div>
             </div>
         </div>
     </div>
+    <style>
+    svg {
+        max-width: 50px;
+    }
+
+    p {
+        padding-top: 10px;
+    }
+
+</style>
 </div>
