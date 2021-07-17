@@ -16,12 +16,20 @@
                         <div class="alert alert-success">{{ Session('sms') }}</div>
                     @endif
                 </div>
-                <div class="card-header">
+                <div class="card-header" style="display: flex;">
                     <div class="col-md-4">
                         <div>
-                            <input type="text" id="sBox" wire:model="sBox" class="form-control" placeholder="Search name, email, dept or phone">
+                            <input type="text" id="sBox" wire:model="sBox" class="form-control"
+                                placeholder="Search name, email, dept or phone">
                         </div>
-                        {{ $sBox }}
+                    </div>
+                    <div class="col-md-4">
+                        <select class="form-select" aria-label="Default select example"  wire:model="sBox">
+                            <option value="" selected>Select Department</option>
+                            @foreach ($depts as $dept)
+                                <option value="{{$dept->dept}}">{{$dept->dept}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="card-body">
@@ -63,13 +71,13 @@
         </div>
     </div>
     <style>
-    svg {
-        max-width: 50px;
-    }
+        svg {
+            max-width: 50px;
+        }
 
-    p {
-        padding-top: 10px;
-    }
+        p {
+            padding-top: 10px;
+        }
 
-</style>
+    </style>
 </div>
