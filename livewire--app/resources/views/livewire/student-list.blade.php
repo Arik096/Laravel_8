@@ -1,3 +1,11 @@
+<style>
+    svg{
+        max-width: 50px;
+    }
+    p{
+        padding-top: 10px;
+    }
+</style>
 {{-- {{ $students }} --}}
 <div class="container">
     <div class="row">
@@ -49,6 +57,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{$students->links()}}
                 </div>
             </div>
         </div>
