@@ -20,7 +20,7 @@ class StudentList extends Component
 
     public function render()
     {
-        $students = DB::table('students')->get();
+        $students = DB::table('students')->paginate(10);
 
         return view('livewire.student-list', ['students'=>$students]);
     }
