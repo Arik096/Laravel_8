@@ -9,6 +9,7 @@ use App\Http\Livewire\Students;
 use App\Http\Livewire\StudentList;
 use App\Http\Livewire\StudentCreate;
 use App\Http\Livewire\StudentUpdate;
+use App\Http\Livewire\Uplaods;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,6 @@ Route::prefix('crud')->group(function () {
     Route::get('/create',StudentCreate::class)->name('stdcreate');
     Route::get('/upadte/{id}',StudentUpdate::class)->name('stdupdate');
 });
+
+
+Route::get('/up',Uplaods::class)->name('up');
