@@ -12,6 +12,7 @@ class StudentList extends Component
 {
 
     public $sBox;
+    public $disticntDepts;
 
     public function delete($id){
         DB::table('students')->where('id', $id)->delete();
@@ -22,6 +23,11 @@ class StudentList extends Component
 
     public function render()
     {
+        $this->disticntDepts = DB::table('students')
+        ->select('dept')
+        ->distinct()
+        ->get();
+
         $students = DB::table('students')
         ->where('name', 'LIKE', '%'.$this->sBox.'%')
         ->orWhere('email', 'LIKE', '%'.$this->sBox.'%')
@@ -29,6 +35,6 @@ class StudentList extends Component
         ->orWhere('phone', 'LIKE', '%'.$this->sBox.'%')
         ->paginate(10);
 
-        return view('livewire.student-list', ['students'=>$students]);
+        return view('livewire.student-list', ['students'=>$students, 'depts'=>$this->disticntDepts]);
     }
 }
