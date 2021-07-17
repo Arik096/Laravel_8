@@ -11,6 +11,8 @@ use Livewire\WithPagination;
 class StudentList extends Component
 {
 
+    public $sBox;
+
     public function delete($id){
         DB::table('students')->where('id', $id)->delete();
         Session()->flash('sms', 'Student Deleted');
@@ -20,7 +22,12 @@ class StudentList extends Component
 
     public function render()
     {
-        $students = DB::table('students')->paginate(10);
+        $students = DB::table('students')
+        ->where('name', 'LIKE', '%'.$this->sBox.'%')
+        ->orWhere('email', 'LIKE', '%'.$this->sBox.'%')
+        ->orWhere('dept', 'LIKE', '%'.$this->sBox.'%')
+        ->orWhere('phone', 'LIKE', '%'.$this->sBox.'%')
+        ->paginate(10);
 
         return view('livewire.student-list', ['students'=>$students]);
     }
