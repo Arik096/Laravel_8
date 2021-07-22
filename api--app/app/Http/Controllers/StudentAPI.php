@@ -9,7 +9,8 @@ use App\Models\Student;
 
 class StudentAPI extends Controller
 {
-    public function getSTD(){
+    public function getSTD()
+    {
         return DB::table('students')->get();
     }
 
@@ -18,20 +19,34 @@ class StudentAPI extends Controller
         return DB::table('students')->where('id', $id)->get();
     }
 
-    public function setSTD(Request $request){
-        $std = new Student;
-        $std->name =$request->name;
-        $std->dept =$request->dept;
-        $std->email =$request->email;
-        $std->phone =$request->phone;
+    public function setSTD(Request $request)
+    {
+        $result = DB::table('students')
+            ->insert([
+                'name' => $request->name,
+                'dept' => $request->dept,
+                'email' => $request->email,
+                'phone' => $request->phone
+            ]);
 
-
-        $result = $std->save();
-
-        if($result){
+        if ($result) {
             return "Data Added";
+        } else {
+            return "Error";
         }
-        else{
+    }
+
+    public function upSTD(Request $request)
+    {
+        $result = DB::table('students')
+            ->where('id', $request->id)
+            ->update([
+                'name' => $request->name
+            ]);
+
+        if ($result == 1) {
+            return "Data Update Done";
+        } else {
             return "Error";
         }
     }
