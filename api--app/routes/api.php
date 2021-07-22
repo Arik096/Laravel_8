@@ -29,3 +29,4 @@ Route::get('/std', [StudentAPI::class, 'getSTD']);
 Route::get('/std/{id?}', [StudentAPI::class, 'getSTDbyID']);
 Route::post('/stdadd', [StudentAPI::class, 'setSTD']);
 Route::put('/stdup', [StudentAPI::class, 'upSTD']);
+Route::delete('/stdde/{id}', [StudentAPI::class, 'deSTD']);
