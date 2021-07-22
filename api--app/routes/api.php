@@ -27,3 +27,4 @@ Route::get('/data',[DummyAPI::class, 'getData']);
 
 Route::get('/std',[StudentAPI::class, 'getSTD']);
 Route::get('/std/{id?}',[StudentAPI::class, 'getSTDbyID']);
+Route::post('/stdadd',[StudentAPI::class, 'setSTD']);
