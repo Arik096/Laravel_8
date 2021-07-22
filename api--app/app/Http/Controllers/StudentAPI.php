@@ -50,4 +50,16 @@ class StudentAPI extends Controller
             return "Error";
         }
     }
+
+    public function deSTD($id){
+        $result = DB::table('students')
+        ->where('id',$id)
+        ->delete();
+
+        if ($result == 1) {
+            return "Data Deleted";
+        } else {
+            return "Error";
+        }
+    }
 }
