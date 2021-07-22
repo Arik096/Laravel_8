@@ -21,10 +21,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/data',[DummyAPI::class, 'getData']);
+Route::get('/data', [DummyAPI::class, 'getData']);
 
 
 
-Route::get('/std',[StudentAPI::class, 'getSTD']);
-Route::get('/std/{id?}',[StudentAPI::class, 'getSTDbyID']);
-Route::post('/stdadd',[StudentAPI::class, 'setSTD']);
+Route::get('/std', [StudentAPI::class, 'getSTD']);
+Route::get('/std/{id?}', [StudentAPI::class, 'getSTDbyID']);
+Route::post('/stdadd', [StudentAPI::class, 'setSTD']);
+Route::put('/stdup', [StudentAPI::class, 'upSTD']);
