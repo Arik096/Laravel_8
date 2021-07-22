@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DummyAPI;
+use App\Http\Controllers\StudentAPI;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get('/data',[DummyAPI::class, 'getData']);
+
+
+
+Route::get('/std',[StudentAPI::class, 'getSTD']);
+Route::get('/std/{id?}',[StudentAPI::class, 'getSTDbyID']);
