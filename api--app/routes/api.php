@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DummyAPI;
 use App\Http\Controllers\StudentAPI;
 use App\Http\Controllers\TestResource;
+use App\Http\Controllers\FileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,6 @@ Route::get('/searchSTD/{name}', [StudentAPI::class, 'seSTD']);
 
 
 Route::apiResource('/test', TestResource::class);
+
+
+Route::post('/file',[FileController::class, 'upload']);
