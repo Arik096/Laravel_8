@@ -6,6 +6,7 @@ use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Student;
+use Illuminate\Support\Facades\Validator;
 
 class StudentAPI extends Controller
 {
@@ -21,13 +22,27 @@ class StudentAPI extends Controller
 
     public function setSTD(Request $request)
     {
-        $result = DB::table('students')
-            ->insert([
-                'name' => $request->name,
-                'dept' => $request->dept,
-                'email' => $request->email,
-                'phone' => $request->phone
-            ]);
+
+        $validator  = Validator::make($request->all(), [
+            'name' => 'required | min:5',
+            'dept' => 'required | max:5',
+            'email' => 'required | email',
+            'phone' => 'required | numeric'
+        ]);
+
+
+        if ($validator->fails()) {
+            return $validator->errors();
+        } else {
+            $result = DB::table('students')
+                ->insert([
+                    'name' => $request->name,
+                    'dept' => $request->dept,
+                    'email' => $request->email,
+                    'phone' => $request->phone
+                ]);
+        }
+
 
         if ($result) {
             return "Data Added";
