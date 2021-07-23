@@ -53,11 +53,25 @@ class StudentAPI extends Controller
 
     public function upSTD(Request $request)
     {
-        $result = DB::table('students')
-            ->where('id', $request->id)
-            ->update([
-                'name' => $request->name
-            ]);
+        $validator  = Validator::make($request->all(), [
+            'name' => 'required | min:5',
+            'dept' => 'required | max:5',
+            'email' => 'required | email',
+            'phone' => 'required | numeric'
+        ]);
+
+        if ($validator->fails()) {
+            return $validator->errors();
+        } else {
+            $result = DB::table('students')
+                ->where('id', $request->id)
+                ->update([
+                    'name' => $request->name,
+                    'dept' => $request->dept,
+                    'email' => $request->email,
+                    'phone' => $request->phone
+                ]);
+        }
 
         if ($result == 1) {
             return "Data Update Done";
