@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DummyAPI;
 use App\Http\Controllers\StudentAPI;
+use App\Http\Controllers\TestResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,6 @@ Route::post('/stdadd', [StudentAPI::class, 'setSTD']);
 Route::put('/stdup', [StudentAPI::class, 'upSTD']);
 Route::delete('/stdde/{id}', [StudentAPI::class, 'deSTD']);
 Route::get('/searchSTD/{name}', [StudentAPI::class, 'seSTD']);
+
+
+Route::apiResource('/test', TestResource::class);
