@@ -51,15 +51,34 @@ class StudentAPI extends Controller
         }
     }
 
-    public function deSTD($id){
+    public function deSTD($id)
+    {
         $result = DB::table('students')
-        ->where('id',$id)
-        ->delete();
+            ->where('id', $id)
+            ->delete();
 
         if ($result == 1) {
             return "Data Deleted";
         } else {
             return "Error";
+        }
+    }
+
+
+    public function seSTD($term)
+    {
+        $gotData =  DB::table('students')
+            ->where('name', 'Like', '%' . $term . '%')
+            ->orWhere('dept', 'Like', '%' . $term . '%')
+            ->orWhere('phone', 'Like', '%' . $term . '%')
+            ->orWhere('email', 'Like', '%' . $term . '%')
+            ->get();
+
+
+        if ($gotData == null) {
+            return $gotData;
+        } else {
+            return ['result' => 'No Data Found'];
         }
     }
 }
