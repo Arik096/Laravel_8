@@ -104,7 +104,7 @@ class StudentAPI extends Controller
             ->get();
 
 
-        if ($gotData == null) {
+        if ($gotData != null) {
             return $gotData;
         } else {
             return ['result' => 'No Data Found'];
