@@ -16,8 +16,8 @@ use App\Http\Controllers\ViewDemoController;
 */
 
 Route::get('/', function () {
-    //return view('welcome');
-    return redirect('/h');
+    return view('welcome');
+    //return redirect('/h');
 });
 
 Route::get('u/{name}',[Users::class,'index']);
